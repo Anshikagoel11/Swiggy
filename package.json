@@ -1,5 +1,6 @@
 {
   "name": "swiggy",
+  "type": "module",
   "version": "1.0.0",
   "description": "Swiggy clone",
   "main": "index.js",
