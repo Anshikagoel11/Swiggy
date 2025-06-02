@@ -1,5 +1,4 @@
- export const restaurantsdata = [
-                                                        {
+ export const restaurantsdata = [ {
                                                         "info": {
                                                             "id": "5471",
                                                             "name": "Wok In The Clouds",
