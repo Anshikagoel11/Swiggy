@@ -5,6 +5,8 @@ import Headers from "./components/headers";
 import FoodItems from "./components/fooditems"
 import GrocriesItem from "./components/grocery";
 import Restaurants from "./components/Restaurants";
+import Footer from "./components/footer";
+
 
 const App = () => {
   return (
@@ -13,6 +15,7 @@ const App = () => {
    <FoodItems/>
    <GrocriesItem/>
    <Restaurants/>
+   <Footer/>
    </>
   );
 };
