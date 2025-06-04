@@ -1,6 +1,6 @@
-import {grocriesdata} from "../utils/groceriesdata"
-import GroceryCard from "./groceryCard"
 
+import GroceryCard from "./groceryCard"
+import {grocriesdata} from "../../utils/groceriesdata"
 
 export default function GrocriesItem(){
    return(

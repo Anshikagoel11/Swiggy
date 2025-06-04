@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { cities } from "../utils/footercitiesdata";
+import { cities } from "../../utils/footercitiesdata";
 import { v4 as uuidv4 } from "uuid";
 
 function City({ city }) {

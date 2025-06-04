@@ -1,23 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./style.css"; 
-import Headers from "./components/headers";
-import FoodItems from "./components/fooditems"
-import GrocriesItem from "./components/grocery";
-import Restaurants from "./components/Restaurants";
-import Footer from "./components/footer";
-import RestaurantPage from "./components/RestaurantPage";
+import RestaurantPage from "./components/RestaurantPage/RestaurantPage";
+import store from "./Redux/Store";
+import { Provider } from "react-redux";
+import { BrowserRouter,Routes,Route } from "react-router";
+import Home from "./components/HomePage/Home"
 
 const App = () => {
   return (
-   <>
-   <Headers/>
-   <FoodItems/>
-   <GrocriesItem/>
-   <Restaurants/>
-   <Footer/>
-   <RestaurantPage/>
-   </>
+    <Provider store={store}>
+   <BrowserRouter>
+   <Routes>
+    <Route path="/" element={<Home/>}></Route>
+    <Route path="/restaurants" element={ <RestaurantPage/>}></Route>
+   </Routes>
+   </BrowserRouter>
+   </Provider>
+ 
   );
 };
 

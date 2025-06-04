@@ -1,5 +1,5 @@
 
-import SwiggyAppBanner  from "../components/SwiggyAppBanner"
+import SwiggyAppBanner  from "./SwiggyAppBanner"
 import FooterCitites from "./footerCities"
 import FooterGrocery from "./FooterGrocery"
 

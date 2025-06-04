@@ -1,5 +1,5 @@
-import fooddata from "../utils/fooddata";
-import FoodCart from "./FoodCart";
+import fooddata from "../../utils/fooddata";
+import FoodCart from "./Foodcart";
 
 export default function FoodItems() {
   return (

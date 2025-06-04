@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { GroceryCities } from "../utils/footerGrocerydata";
+import { GroceryCities } from "../../utils/footerGrocerydata";
 import { v4 as uuidv4 } from "uuid";
 
 

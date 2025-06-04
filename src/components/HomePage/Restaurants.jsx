@@ -1,4 +1,4 @@
-import { restaurantsdata } from "../utils/restaurantsData";
+import { restaurantsdata } from "../../utils/restaurantsData";
 import Restaurantcard from "./restaurantCard";
 
 export default function Restaurants() {
