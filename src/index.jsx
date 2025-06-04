@@ -6,7 +6,7 @@ import FoodItems from "./components/fooditems"
 import GrocriesItem from "./components/grocery";
 import Restaurants from "./components/Restaurants";
 import Footer from "./components/footer";
-
+import RestaurantPage from "./components/RestaurantPage";
 
 const App = () => {
   return (
@@ -16,6 +16,7 @@ const App = () => {
    <GrocriesItem/>
    <Restaurants/>
    <Footer/>
+   <RestaurantPage/>
    </>
   );
 };
