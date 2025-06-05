@@ -17,7 +17,7 @@ const fetchData = createAsyncThunk(
         return data;
 
       } catch (error) {
-       return rejectWithValue(error);
+       return rejectWithValue(error.message);
       }
     
     }

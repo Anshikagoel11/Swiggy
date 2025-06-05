@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function TopRestaurant({ data }) {
   const RestData = data?.gridElements?.infoWithStyle?.restaurants;
 
@@ -13,10 +15,12 @@ export default function TopRestaurant({ data }) {
           const discount = info?.aggregatedDiscountInfoV3;
 
           return (
+            
             <div
               key={info?.id}
               className="min-w-[250px] rounded-xl overflow-hidden border hover:shadow-md transform hover:scale-95 transition-transform duration-300 border-gray-200"
             >
+              <Link to={`/restaurants/${info.id}`}>
               <div className="relative">
                 <img
                   src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${info?.cloudinaryImageId}`}
@@ -47,6 +51,7 @@ export default function TopRestaurant({ data }) {
                   {info.areaName}
                 </div>
               </div>
+              </Link>
             </div>
           );
         })}

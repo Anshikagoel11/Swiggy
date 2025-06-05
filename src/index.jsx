@@ -6,17 +6,25 @@ import store from "./Redux/Store";
 import { Provider } from "react-redux";
 import { BrowserRouter,Routes,Route } from "react-router";
 import Home from "./components/HomePage/Home"
+import ScrollToTop from "./components/ScrollToTop";
+import SingleRestaurant from "./components/SingleRestaurant/SingleRestaurant";
+
 
 const App = () => {
   return (
+   
     <Provider store={store}>
    <BrowserRouter>
+   {/* always use inside routers */}
+    <ScrollToTop />  
    <Routes>
     <Route path="/" element={<Home/>}></Route>
     <Route path="/restaurants" element={ <RestaurantPage/>}></Route>
+    <Route path="/restaurants/:id" element={<SingleRestaurant/>}></Route>
    </Routes>
    </BrowserRouter>
    </Provider>
+  
  
   );
 };
