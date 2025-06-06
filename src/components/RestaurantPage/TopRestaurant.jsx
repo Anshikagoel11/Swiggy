@@ -29,7 +29,7 @@ export default function TopRestaurant({ data }) {
                 />
                 {discount?.header && (
                   <div className="absolute bottom-2 left-2 bg-black bg-opacity-70 text-white text-sm px-2 py-1 rounded">
-                    ₹{discount?.header}
+                    {discount?.header}
                     {discount?.subHeader && (
                       <span className="ml-1">{discount?.subHeader}</span>
                     )}
