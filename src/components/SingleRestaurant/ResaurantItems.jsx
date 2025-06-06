@@ -14,10 +14,10 @@ export default function ResaurantItems() {
     <div className="w-full flex flex-col items-center m-auto  py-8">
       <div className="w-[60%] max-w-3xl">
         <hr className="mb-5 text-gray-300" />
-        {filterData?.map((menuItems) => (
+        {filterData?.map((menuItems,index) => (
           <MenuCard
             key={menuItems?.card?.card?.title}
-            menuItems={menuItems?.card?.card}
+            menuItems={menuItems?.card?.card} isFirst={index===0}
           />
         ))}
       </div>

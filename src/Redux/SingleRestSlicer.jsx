@@ -14,7 +14,7 @@ const fetchRestData = createAsyncThunk(
       try {
         const response = await fetch(proxyServer + swiggyAPI);
         const data = await response.json();
-        return data;
+        return data; 
 
       } catch (error) {
        return rejectWithValue(error.message);

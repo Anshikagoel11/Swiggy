@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function OnlineFoodRestaurant({ data1,data2 }) {
   const restaurants = data2?.gridElements?.infoWithStyle?.restaurants;
 
@@ -11,6 +13,7 @@ export default function OnlineFoodRestaurant({ data1,data2 }) {
           const discount = info?.aggregatedDiscountInfoV3;
 
           return (
+           <Link to={`/restaurants/${info.id}`}>
             <div
               key={info?.id}
               className="rounded-xl overflow-hidden shadow-md transform transition-transform hover:scale-95 border border-gray-200"
@@ -23,7 +26,7 @@ export default function OnlineFoodRestaurant({ data1,data2 }) {
                 />
                 {discount?.header && (
                   <div className="absolute bottom-2 left-2 bg-black bg-opacity-70 text-white text-sm px-2 py-1 rounded">
-                    ₹{discount?.header}
+                    {discount?.header}
                     {discount?.subHeader && (
                       <span className="ml-1">{discount?.subHeader}</span>
                     )}
@@ -42,6 +45,7 @@ export default function OnlineFoodRestaurant({ data1,data2 }) {
                 <p className="text-sm text-gray-500">{info?.areaName}</p>
               </div>
             </div>
+           </Link>
           );
         })}
       </div>
