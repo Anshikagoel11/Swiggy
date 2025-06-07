@@ -1,7 +1,7 @@
 
 import { useSelector } from "react-redux";
-import SearchItem from "./SearchItem";
-export default function ResaurantHeader(){
+import { Link } from "react-router";
+export default function ResaurantHeader({id}){
     
 
      const {data}= useSelector((state)=>state.SingleRestaurant)
@@ -76,7 +76,8 @@ export default function ResaurantHeader(){
 <div className="text-center mt-10 mb-10">
    MENU
 </div>
-<button className="bg-gray-200  w-full py-2  text-center  rounded-lg mb-6" onClick={()=>{<SearchItem/>}}>Search for dishes </button>
+<Link to={`/restaurants/${id}/search`}>
+<button className="bg-gray-200  w-full py-2  text-center  rounded-lg mb-6">Search for dishes </button></Link>
            
         </div>
     )

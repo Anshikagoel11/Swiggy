@@ -2,10 +2,10 @@ import ResaurantHeader from "./ResaurantHeader"
 import ResaurantItems from "./ResaurantItems"
 
 
-export default function RestaurantData(){
+export default function RestaurantData({id}){
     return(
         <>
-        <ResaurantHeader/>
+        <ResaurantHeader id={id}/>
         <ResaurantItems/>
         </>
     )

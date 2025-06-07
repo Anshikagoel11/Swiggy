@@ -21,6 +21,6 @@ const dispatch = useDispatch();
 
 
     return (
-        <RestaurantData/>
+        <RestaurantData id={id}/>
     );
 }
