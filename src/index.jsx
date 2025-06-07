@@ -8,6 +8,7 @@ import { BrowserRouter,Routes,Route } from "react-router";
 import Home from "./components/HomePage/Home"
 import ScrollToTop from "./components/ScrollToTop";
 import SingleRestaurant from "./components/SingleRestaurant/SingleRestaurant";
+import SearchItem from "./components/SingleRestaurant/SearchItem";
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
     <Route path="/" element={<Home/>}></Route>
     <Route path="/restaurants" element={ <RestaurantPage/>}></Route>
     <Route path="/restaurants/:id" element={<SingleRestaurant/>}></Route>
+    <Route path="/restaurants/:id/search" element={<SearchItem/>}></Route>
    </Routes>
    </BrowserRouter>
    </Provider>

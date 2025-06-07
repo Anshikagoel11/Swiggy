@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import RestInfo from "./RestInfo";
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
 
-export default function MenuCard({ menuItems, level = 0, isFirst = false }) {
+export default function MenuCard({ menuItems, level = 0, isFirst = false ,veg ,Bestseller}) {
   const [isExpand, setisExpand] = useState(isFirst);
 
   const isNested = level > 0;
+
+    useEffect(() => {
+    if (Bestseller || veg!==null) {
+      setisExpand(true);
+    }
+  }, [Bestseller,veg]);
 
   if ("categories" in menuItems) {
     return (
@@ -35,12 +41,23 @@ export default function MenuCard({ menuItems, level = 0, isFirst = false }) {
               <MenuCard
                 key={items?.title}
                 menuItems={items}
-                level={level + 1}
+                level={level + 1} veg={veg} Bestseller={Bestseller}
               />
             ))}
         </div>
       </div>
     );
+  }
+
+  let itemToShow = menuItems?.itemCards;
+  if(Bestseller){
+    itemToShow = itemToShow.filter((item)=>item?.card?.info?.isBestseller)
+   
+  }
+  if(veg===true){
+   itemToShow = itemToShow.filter((item)=>item?.card?.info?.isVeg);
+  }else if(veg===false){
+   itemToShow = itemToShow.filter((item)=>!item?.card?.info.isVeg);
   }
 
   return (
@@ -58,15 +75,17 @@ export default function MenuCard({ menuItems, level = 0, isFirst = false }) {
               setisExpand(!isExpand);
             }}
           >
-            {" "}
-            {isExpand ? <MdExpandMore /> : <MdExpandLess />}{" "}
+          
+            {isExpand ? <MdExpandMore /> : <MdExpandLess />}
           </button>
         </div>
       </h1>
 
       <div>
+       
+
         {isExpand &&
-          menuItems?.itemCards?.map((items) => (
+          itemToShow?.map((items) => (
             <RestInfo
               key={items?.card?.info?.id}
               restData={items?.card?.info}

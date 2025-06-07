@@ -1,5 +1,6 @@
 
 import { useSelector } from "react-redux";
+import SearchItem from "./SearchItem";
 export default function ResaurantHeader(){
     
 
@@ -75,8 +76,7 @@ export default function ResaurantHeader(){
 <div className="text-center mt-10 mb-10">
    MENU
 </div>
-            {/* Menu Button */}
-            <input className=" bg-gray-200  w-full py-3  text-center font-bold rounded-lg mb-6" placeholder="Search for dishes"/>
+<button className="bg-gray-200  w-full py-2  text-center  rounded-lg mb-6" onClick={()=>{<SearchItem/>}}>Search for dishes </button>
            
         </div>
     )

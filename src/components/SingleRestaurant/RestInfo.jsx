@@ -18,7 +18,8 @@ export default function RestInfo({ restData }) {
     {
         restData?.ratings?.aggregatedRating?.rating  &&(
 
-              <span> ★ {restData?.ratings?.aggregatedRating?.rating} </span>
+              <span> ★ {restData?.ratings?.aggregatedRating?.rating}
+               </span>
          
         )
     }
