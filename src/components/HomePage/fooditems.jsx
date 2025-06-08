@@ -10,7 +10,5 @@ export default function FoodItems() {
     ))}
   </div>
 </div>
-
-
   );
 }
