@@ -9,7 +9,8 @@ import Home from "./components/HomePage/Home"
 import ScrollToTop from "./components/ScrollToTop";
 import SingleRestaurant from "./components/SingleRestaurant/SingleRestaurant";
 import SearchItem from "./components/SingleRestaurant/SearchItem";
-
+import SecondHome from "./components/SingleRestaurant/secondHome";
+import CartCheckout from "./components/cartCheckout";
 
 const App = () => {
   return (
@@ -20,9 +21,12 @@ const App = () => {
     <ScrollToTop />  
    <Routes>
     <Route path="/" element={<Home/>}></Route>
+    <Route element={<SecondHome/>}>
     <Route path="/restaurants" element={ <RestaurantPage/>}></Route>
     <Route path="/restaurants/:id" element={<SingleRestaurant/>}></Route>
     <Route path="/restaurants/:id/search" element={<SearchItem/>}></Route>
+    </Route>
+    <Route path="/checkout" element={<CartCheckout/>}></Route>
    </Routes>
    </BrowserRouter>
    </Provider>

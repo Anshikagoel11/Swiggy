@@ -1,12 +1,22 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem,increaseItem,decreaseItem } from "../../Redux/cartslicer";
 
 export default function RestInfo({ restData }) {
   const [showFullDesc, setShowFullDesc] = useState(false);
   const description = restData?.description || "";
+  const dispatch = useDispatch();
+
+  const cartItem = useSelector((state)=>state.cartSlicer.cartItems)
+  // console.log(cartItem)
+   const currentItem = cartItem?.find(item => item.id === restData.id)
+   const count = currentItem?currentItem.quantity:0;
+  //  console.log(count)
 
   const toggleDesc = () => {
     setShowFullDesc(!showFullDesc);
   };
+
 
   return (
     <div className="w-full mx-auto py-6 border-b border-gray-300 flex justify-between items-start">
@@ -36,7 +46,7 @@ export default function RestInfo({ restData }) {
             <p className={`text-gray-500 text-sm ${showFullDesc ? "" : "line-clamp-2"}`}>
               {description}
             </p>
-            {description.length > 100 && (
+            {description.length > 100 && ( 
               <button
                 className="text-blue-500 text-xs mt-1"
                 onClick={toggleDesc}
@@ -55,9 +65,22 @@ export default function RestInfo({ restData }) {
           src={`https://media-assets.swiggy.com/swiggy/image/upload/${restData?.imageId}`}
           alt="food"
         />
-        <button className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded px-7 py-2 text-green-600 font-bold">
+        {
+          (count===0)?
+        (  <button className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded px-7 py-2 text-green-600 font-bold" onClick={()=>{dispatch(addItem(restData))}}>
           ADD
+        </button>):(
+          <div className="absolute flex space-between  bottom-[-12px] left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded px-1 py-2 text-green-600 font-bold">
+            <button className="px-3" onClick={()=>{dispatch(decreaseItem(restData))}}>
+          -
         </button>
+        <span>{count}</span>
+        <button className="px-4" onClick={()=>{dispatch(increaseItem(restData))}}> 
+          +
+        </button>
+          </div>
+        )
+        }
 
         {restData?.itemAttribute?.vegClassifier === "NONVEG" && (
           <div className="bg-white absolute top-1 right-1 p-1 rounded">
