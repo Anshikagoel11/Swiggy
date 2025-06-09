@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import RestInfo from "./RestInfo";
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
-
 export default function MenuCard({ menuItems, level = 0, isFirst = false, veg = null, Bestseller = false }) {
   const [isExpand, setisExpand] = useState(isFirst);
   const isNested = level > 0;
@@ -14,11 +13,11 @@ export default function MenuCard({ menuItems, level = 0, isFirst = false, veg = 
 
   if ("categories" in menuItems) {
     return (
-      <div className="w-full">
-        <h1 className={`mt-7 text-start ${isNested ? "text-lg font-bold text-[17px]" : "text-xl font-bold"}`}>
-          <div className="flex justify-between">
+      <div className="w-[90%] max-w-lg mx-auto">
+        <h1 className={`mt-4 text-start ${isNested ? "text-base font-semibold" : "text-lg font-semibold"}`}>
+          <div className="flex justify-between items-center">
             {menuItems?.title}
-            <button className="text-2xl" onClick={() => setisExpand(!isExpand)}>
+            <button className="text-xl" onClick={() => setisExpand(!isExpand)}>
               {isExpand ? <MdExpandMore /> : <MdExpandLess />}
             </button>
           </div>
@@ -54,11 +53,11 @@ export default function MenuCard({ menuItems, level = 0, isFirst = false, veg = 
   if (!itemToShow || itemToShow.length === 0) return null;
 
   return (
-    <div className="w-full">
-      <h1 className={`mt-7 text-start ${isNested ? "text-lg font-bold text-[17px]" : "text-xl font-bold"}`}>
-        <div className="flex justify-between">
+    <div className="w-[90%] max-w-lg mx-auto">
+      <h1 className={`mt-4 text-start ${isNested ? "text-base font-semibold" : "text-lg font-semibold"}`}>
+        <div className="flex justify-between items-center">
           {menuItems?.title}
-          <button className="text-2xl" onClick={() => setisExpand(!isExpand)}>
+          <button className="text-xl" onClick={() => setisExpand(!isExpand)}>
             {isExpand ? <MdExpandMore /> : <MdExpandLess />}
           </button>
         </div>
@@ -70,7 +69,7 @@ export default function MenuCard({ menuItems, level = 0, isFirst = false, veg = 
             <RestInfo key={items?.card?.info?.id} restData={items?.card?.info} />
           ))}
       </div>
-      <div className="h-2 bg-gray-100 mt-1"></div>
+      <div className="h-1 bg-gray-100 mt-1"></div>
     </div>
   );
 }

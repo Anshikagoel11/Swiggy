@@ -1,43 +1,41 @@
-
 import { useState } from "react";
 import { GroceryCities } from "../../utils/footerGrocerydata";
 import { v4 as uuidv4 } from "uuid";
 
-
 function City({ cities }) {
   return (
     <a href={cities.link}>
-      <div className=" border p-5 text-gray-800 border-gray-300 rounded-2xl  text-[14px] font-bold items-center justify-center text-center">
+      <div className="border p-3 sm:p-4 text-gray-800 border-gray-300 rounded-2xl text-[12px] sm:text-[14px] font-bold text-center">
         <h3>{cities.text}</h3>
       </div>
     </a>
   );
 }
 
-export default  function FooterGrocery(){
+export default function FooterGrocery() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleGroceryCities = showAll ? GroceryCities : GroceryCities.slice(0, 6); // Mobile pe 6 cities
 
-    const [showAll , setShowAll]=useState(false);
-    const visibleGroceryCities = showAll? GroceryCities : GroceryCities.slice(0,11);
+  return (
+    <div className="w-[90%] md:w-[80%] lg:w-[70%] container mx-auto mb-10"> {/* Margin bottom kam */}
+      <h1 className="font-bold text-xl sm:text-2xl mb-2 sm:mb-3">
+        Cities with grocery delivery
+      </h1>
 
-return(
-    <div className="w-[70%] container m-auto mb-20 ">
-         <h1 className="font-bold mb-2 text-2xl">Cities with grocery delivery</h1>
-<div className="grid grid-cols-4 gap-3">
-{
-    visibleGroceryCities.map((c)=>{
-        return <City key={uuidv4()} cities={c}/>
-    })
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4"> {/* Gap mobile pe kam */}
+        {visibleGroceryCities.map((c) => (
+          <City key={uuidv4()} cities={c} />
+        ))}
 
-}
- {!showAll && (
+        {!showAll && (
           <button
-            className="flex p-1 m-1 border rounded-2xl h-13 items-center justify-center text-orange-500 font-semibold"
+            className="flex p-2 mt-2 border rounded-2xl h-10 sm:h-12 items-center justify-center text-orange-500 text-sm sm:text-base font-semibold"
             onClick={() => setShowAll(true)}
           >
             Show More &darr;
           </button>
         )}
-</div>
+      </div>
     </div>
-)
+  );
 }

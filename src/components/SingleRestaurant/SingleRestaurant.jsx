@@ -12,8 +12,10 @@ const dispatch = useDispatch();
 
 
   useEffect(() => {
+    if(!data?.data?.cards || data?.data?.cards.length===0){
       dispatch(fetchRestData(id));
-    }, [dispatch]);
+    }
+    }, [dispatch,data]);
 
 
     if (loading) return <RestaurantShimmer/>
