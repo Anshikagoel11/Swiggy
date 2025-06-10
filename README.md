@@ -15,15 +15,6 @@ A frontend clone of the popular food delivery platform [Swiggy](https://www.swig
 
 ---
 
-## 📸 Screenshots
-
-> ![Screenshot 2025-06-10 231312](https://github.com/user-attachments/assets/4ab58cde-4d1b-4b2f-86c8-2cb6fec93b56)
-![Screenshot 2025-06-10 231404](https://github.com/user-attachments/assets/59ec8ba2-f921-4a4d-92b7-3a9d18b8de1b)
-![Screenshot 2025-06-10 231428](https://github.com/user-attachments/assets/61c78844-8eb9-4253-b7b0-dea4eccb1a99)
-![Screenshot 2025-06-10 231451](https://github.com/user-attachments/assets/3cc9631e-dbe2-44a5-b35e-ff4555d9aa33)
-
----
-
 ## 🛠️ Tech Stack
 
 - **Frontend**: React.js, React Router, Redux
