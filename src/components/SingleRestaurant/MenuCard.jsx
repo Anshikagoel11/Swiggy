@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import RestInfo from "./RestInfo";
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
-export default function MenuCard({ menuItems, level = 0, isFirst = false, veg = null, Bestseller = false }) {
+
+export default function MenuCard({ menuItems, level = 0, isFirst, veg, Bestseller}) {
   const [isExpand, setisExpand] = useState(isFirst);
   const isNested = level > 0;
 
