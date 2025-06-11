@@ -1,6 +1,6 @@
 // FoodItems.jsx
 import fooddata from '../../utils/fooddata';
-import FoodCart from './FoodCart';
+import FoodCart from './Foodcart';
 
 export default function FoodItems() {
   return (
