@@ -14,7 +14,7 @@ export default function RestaurantPage() {
   useEffect(() => {
     if (!data?.data?.cards || data?.data?.cards.length === 0) {
       dispatch(fetchData());
-       alert("Data loaded");
+      //  alert("Data loaded");
     }
   }, [dispatch, data]);
 
@@ -24,7 +24,8 @@ export default function RestaurantPage() {
   const dataItem1 = data?.data?.cards?.[0]?.card?.card;
   const dataItem2 = data?.data?.cards?.[1]?.card?.card;
   const dataItem3 = data?.data?.cards?.[2]?.card?.card;
-
+alert(dataItem1)
+alert(dataItem2)
   return (
     <div className="w-[92%] sm:w-[97%] md:w-[90%] px-4 mx-auto">
       <RestaurantItems data={dataItem1} />
