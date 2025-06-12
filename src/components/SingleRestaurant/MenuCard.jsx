@@ -14,12 +14,13 @@ export default function MenuCard({ menuItems, level=1, isFirst, veg, Bestseller}
 // React me useState ka initial value (isFirst) sirf pehli render pe consider hota hai.
 // Baad me agar parent se isFirst prop change hota hai, toh isExpand automatically update nahi hota.
 
-  useEffect(() => {
-    if (Bestseller) {
-      setisExpand(true);
-    }
-      setisExpand(isFirst); 
-  }, [Bestseller,menuItems]);
+ useEffect(() => {
+  if (Bestseller) {
+    setisExpand(true);
+  } else {
+    setisExpand(isFirst);
+  }
+}, [Bestseller, isFirst, menuItems]);
 
  
   if ("categories" in menuItems) {
