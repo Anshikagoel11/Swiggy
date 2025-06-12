@@ -14,6 +14,7 @@ export default function RestaurantPage() {
   useEffect(() => {
     if (!data?.data?.cards || data?.data?.cards.length === 0) {
       dispatch(fetchData());
+       alert("Data loaded");
     }
   }, [dispatch, data]);
 
