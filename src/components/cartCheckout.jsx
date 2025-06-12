@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { IoMdHelpCircle } from "react-icons/io";
 import { MdAccountCircle } from "react-icons/md";
-
+import { Link } from "react-router";
 export default function CartCheckoutPage() {
   const cartItems = useSelector((state) => state.cartSlicer.cartItems);
 
@@ -34,10 +34,12 @@ export default function CartCheckoutPage() {
             <IoMdHelpCircle size={20} />
             <span>Help</span>
           </div>
+          
           <div className="flex items-center gap-1 hover:text-orange-500 cursor-pointer" tabIndex={0} role="button" aria-label="Sign In">
             <MdAccountCircle size={20} />
             <span>Sign In</span>
           </div>
+         
         </div>
       </div>
 

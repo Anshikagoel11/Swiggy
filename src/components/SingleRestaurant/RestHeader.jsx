@@ -65,10 +65,11 @@ export default function RestHeader() {
             <MdCorporateFare />
             <span>Corporate</span>
           </div>
+         <Link to={`/restaurants/${id}/search`}>
           <div className="flex items-center gap-2">
             <FaSearch />
             <span>Search</span>
-          </div>
+          </div></Link>
           <div className="flex items-center gap-2">
             <BiSolidOffer />
             <span>Offers</span>
@@ -77,11 +78,12 @@ export default function RestHeader() {
             <IoMdHelpCircle />
             <span>Help</span>
           </div>
-          <div className="flex items-center gap-2">
+    
+          <Link to={"/checkOut"}>
+           <div className="flex items-center gap-2">
             <MdAccountCircle />
             <span>Sign In</span>
           </div>
-          <Link to={"/checkOut"}>
             <div className="flex items-center gap-2">
               <FaCartPlus />
               <span>Cart({totalItems})</span>
