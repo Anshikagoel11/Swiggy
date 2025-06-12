@@ -27,7 +27,7 @@ A frontend clone of the popular food delivery platform [Swiggy](https://www.swig
 ## 🔧 Installation
 
 ```bash
-git clone https://github.com/<your-username>/swiggy-clone.git
+git clone https://github.com/Anshikagoel11/Swiggy.git
 cd swiggy
 npm install
 npm start
