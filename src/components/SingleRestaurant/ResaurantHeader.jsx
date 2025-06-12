@@ -6,13 +6,6 @@ import { fetchRestData } from "../../Redux/SingleRestSlicer";
 
 export default function ResaurantHeader({ id }) {
    const {data}= useSelector((state)=>state.SingleRestaurant)
-  //    const {data , loading,error}= useSelector((state)=>state.SingleRestaurant)
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(fetchRestData(id))
-  // },[id]);
-// console.log("data is->",data)
 
   const finalData = data?.data?.cards?.[2]?.card?.card?.info;
   const finalData2 =
