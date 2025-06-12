@@ -2,16 +2,26 @@ import { useState, useEffect } from "react";
 import RestInfo from "./RestInfo";
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
 
-export default function MenuCard({ menuItems, level = 0, isFirst, veg, Bestseller}) {
+export default function MenuCard({ menuItems, level=1, isFirst, veg, Bestseller}) {
   const [isExpand, setisExpand] = useState(isFirst);
   const isNested = level > 0;
+
+
+//   Aapne MenuCard me isFirst prop diya tha jisse pehla section open dikhe, lekin jab restaurant change ho raha tha tab bhi pehle wale restaurant ka pehla card hi open reh ja raha tha aur next restaurent me first open nhi ho rha tha kyuki tabh tk menucard ka next load hum krte the toh vha isFirst(index===0) nhi h na ,  Iska reason ye hai:
+
+// Problem: Purani isFirst State kyu reh rahi thi?
+// const [isExpand, setisExpand] = useState(isFirst);
+// React me useState ka initial value (isFirst) sirf pehli render pe consider hota hai.
+// Baad me agar parent se isFirst prop change hota hai, toh isExpand automatically update nahi hota.
 
   useEffect(() => {
     if (Bestseller) {
       setisExpand(true);
     }
-  }, [Bestseller]);
+      setisExpand(isFirst); 
+  }, [Bestseller,menuItems]);
 
+ 
   if ("categories" in menuItems) {
     return (
       <div className="w-[90%] max-w-lg mx-auto">

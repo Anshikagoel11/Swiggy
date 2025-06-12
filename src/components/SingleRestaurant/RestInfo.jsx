@@ -57,11 +57,16 @@ export default function RestInfo({ restData }) {
 
       {/* Image + Button Section */}
       <div className="w-full sm:w-[30%] relative flex-shrink-0">
-        <img
-          className="w-full h-32 sm:h-40 object-cover rounded-lg"
-          src={`https://media-assets.swiggy.com/swiggy/image/upload/${restData?.imageId}`}
-          alt="food"
-        />
+       <img
+  className="w-full h-32 sm:h-40 object-cover rounded-lg"
+  src={
+    restData?.imageId
+      ? `https://media-assets.swiggy.com/swiggy/image/upload/${restData.imageId}`
+      : "https://via.placeholder.com/300x200?text=No+Image"
+  }
+  alt={restData?.name || "food"}
+/>
+
         {(count === 0) ? (
           <button
             className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded px-5 py-1.5 text-green-600 font-bold text-sm"
