@@ -1,5 +1,5 @@
 import { restaurantsdata } from "../../utils/restaurantsData";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard from "./restaurantCard";
 
 export default function Restaurants() {
   return (
