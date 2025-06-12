@@ -45,7 +45,7 @@ export default function SearchItem() {
     <div className="w-[90%] m-auto border-b-2 border-gray-200 mt-10">
       <div className="flex justify-between items-center mb-4">
         <input
-          className="w-[70%] border-b border-gray-300 focus:outline-none text-sm px-2 py-1"
+          className="w-[70%]  border-gray-300 focus:outline-none text-sm px-2 py-1"
           type="text"
           placeholder={`Search in ${ItemName}`}
           value={searchdata}
