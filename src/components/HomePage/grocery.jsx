@@ -1,4 +1,4 @@
-import GroceryCard from "./GroceryCard";
+import GroceryCard from "./groceryCard";
 import { grocriesdata } from "../../utils/groceriesdata";
 
 export default function GrocriesItem() {

@@ -5,6 +5,8 @@ import {fetchData} from "../../Redux/restaurantSlice"
 import TopRestaurant from "./TopRestaurant";
 import OnlineFoodRestaurant from "./OnlineFoodRestaurant";
 import Shimmer from "./Shimmer"
+
+
 export default function RestaurantPage() {
   const { data, loading, error } = useSelector((state) => state.restaurants);
   const dispatch = useDispatch();
