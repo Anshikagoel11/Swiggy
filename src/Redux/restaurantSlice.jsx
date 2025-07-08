@@ -7,7 +7,7 @@ const fetchData = createAsyncThunk(
 
     async(args,thunkAPI)=>{
         const { rejectWithValue } = thunkAPI; 
-      const proxyServer = "https://cors-anywhere.herokuapp.com/";
+      const proxyServer = "https://thingproxy.freeboard.io/fetch/";
       const swiggyAPI =
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4640087729816&lng=77.02618695368315&is-seo-homepage-enabled=true";
 
